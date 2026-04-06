@@ -1,0 +1,18 @@
+# SmartBugs 数据集处理依赖
+
+# 基本依赖
+tqdm>=4.65.0
+pandas>=2.0.0
+numpy>=1.24.0,<2
+
+# 可选: Slither (用于精确AST解析)
+# 如果需要使用Slither，取消下面的注释
+slither-analyzer>=0.9.0
+py-solc-x>=1.1.0
+
+# 可选: 其他漏洞检测工具
+# mythril  # 符号执行
+# manticore  # 符号执行
+
+# 数据处理
+# scikit-learn>=1.2.0  # 如果需要做数据划分的高级功能

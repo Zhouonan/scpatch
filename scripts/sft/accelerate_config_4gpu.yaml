@@ -1,0 +1,48 @@
+# Accelerate配置文件 - 4x RTX 3090
+# 使用方法: accelerate launch --config_file scripts/accelerate_config_4gpu.yaml scripts/train_lora.py ...
+
+compute_environment: LOCAL_MACHINE
+
+distributed_type: MULTI_GPU  # 多GPU训练
+
+num_processes: 4  # GPU数量
+
+# GPU配置
+gpu_ids: all  # 使用所有可用GPU
+# 或者指定特定GPU: gpu_ids: 0,1,2,3
+
+# 混合精度
+mixed_precision: fp16  # 使用FP16混合精度
+
+# 分布式训练后端
+downcast_bf16: 'no'
+machine_rank: 0
+main_training_function: main
+num_machines: 1
+
+# 使用DeepSpeed（可选，用于更大模型）
+use_deepspeed: false
+
+# 如果启用DeepSpeed，使用以下配置
+# deepspeed_config:
+#   gradient_accumulation_steps: 2
+#   gradient_clipping: 1.0
+#   offload_optimizer_device: none
+#   offload_param_device: none
+#   zero3_init_flag: false
+#   zero_stage: 2
+
+# FSDP配置（可选，PyTorch原生方案）
+use_fsdp: false
+
+# 同步策略
+main_process_ip: null
+main_process_port: null
+rdzv_backend: static
+
+# 其他设置
+same_network: true
+tpu_env: []
+tpu_use_cluster: false
+tpu_use_sudo: false
+
