@@ -109,21 +109,6 @@ python src/fixing_pipeline.py \
 
 We release `SCPATCH-BENCH`, a curated benchmark of 175 vulnerable functions spanning eight bug classes (Reentrancy, Access Control, Arithmetic, Unchecked Call, DoS, Timestamp Dependence, Bad Randomness, and Others). Each sample includes the vulnerable function, its enclosing context, the vulnerability type, and a verified ground-truth repair.
 
----
-
-## 📝 Citation
-
-If you find our work or dataset useful in your research, please consider citing our paper:
-
-```bibtex
-@article{zhang2025scpatch,
-  title={SCPatch: Automated Smart Contract Vulnerability Repair via Security-Constrained Policy Optimization},
-  author={Zhang, Weiye and Zhou, Nan and Liu, Zhenguang and Hou, Junxin and Fan, Shaojing and He, Qinming and Jiao, Yingying and Yang, Ziqi},
-  journal={IEEE Transactions on Dependable and Secure Computing},
-  year={2025}
-}
-```
-
 ## 📜 License
 
 This project is released under the [MIT License](LICENSE).
